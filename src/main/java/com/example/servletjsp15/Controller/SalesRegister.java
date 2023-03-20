@@ -12,15 +12,26 @@ import java.io.IOException;
 
 @WebServlet(name="SalesRegister", value = "/sales_register")
 public class SalesRegister extends HttpServlet {
+
+    //using the doGet to handle get method requests below
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        resp.sendRedirect("register.jsp");
         String name = "Gadibia";
-//        HttpSession session  = req.getSession();
+        //how to access a user's session info below (Note: it is just a side-note)
+        //HttpSession session  = req.getSession();
+
+
+        //storing a value as request attribute
+        // using the request.setAttribute( "key", value);
         req.setAttribute("username", name);
+
+
+        //declaring the destination of the request and response
+        // using the RequestDispatcher below
         RequestDispatcher  dispatcher =  req.getRequestDispatcher("register.jsp");
 
-        System.out.println(name);
+        //sending our response back, alongside
+        // our "username" request attribute
         dispatcher.forward(req, resp);
     }
 
