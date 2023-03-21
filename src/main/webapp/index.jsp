@@ -9,7 +9,7 @@
 </h1>
 <br/>
 <%--link to HelloServlet class. NOTE: GET METHODS ARE HANDLED BY doGet method overriden from the HttpServlet class--%>
-<a href="hello-servlet">Hello Servlet</a>
+<a href=${pageContext.getRequest().getContextPath()}/hello-servlet>Hello Servlet</a>
 <br/>
 
 <%--creating a jsp scriptlet to handle if condition for our product request attribute

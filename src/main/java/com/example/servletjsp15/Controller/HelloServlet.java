@@ -1,7 +1,10 @@
 package com.example.servletjsp15.Controller;
 
 import java.io.*;
+import java.sql.SQLException;
 
+import com.example.servletjsp15.DAO.RecieptDAO;
+import com.example.servletjsp15.Model.Reciept;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
@@ -20,9 +23,23 @@ public class HelloServlet extends HttpServlet {
     //using the doPost to handle post requests
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        RecieptDAO  recieptDAO = new RecieptDAO();
+        Reciept reciept = new Reciept();
+
         //using the request.getParameter(with the input field name as key)
         //to access input sent from the Form in the register.jsp
         if (req.getParameter("product_name")!=null){
+            reciept.setPrice(req.getParameter("price"));
+            reciept.setProduct_name(req.getParameter("product_name"));
+            reciept.setQuantity(req.getParameter("quantity"));
+            try {
+                recieptDAO.insertReciept(reciept);
+            } catch (SQLException e) {
+                throw new RuntimeException(e.getMessage());
+            }
+
+
+
             req.setAttribute("product", req.getParameter("product_name"));
 
             //declaring our response destination below
