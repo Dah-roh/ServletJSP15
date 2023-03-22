@@ -30,14 +30,11 @@
 %>
         <tr>
             <td><% out.print(reciept.getId());
-            %></td></tr>
-    <tr>
+            %></td>
         <td><% out.print(reciept.getProduct_name());
-        %></td></tr>
-    <tr>
+        %></td>
         <td><% out.print(reciept.getPrice());
-        %></td></tr>
-    <tr>
+        %></td>
         <td><% out.print(reciept.getQuantity());
         %></td></tr>
 
