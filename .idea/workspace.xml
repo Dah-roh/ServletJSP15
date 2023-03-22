@@ -9,11 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4959f35e-005c-4fac-9bb4-ad0c267bfc93" name="Changes" comment="adds comments">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="4959f35e-005c-4fac-9bb4-ad0c267bfc93" name="Changes" comment="adds DAO implementation to project">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/servletjsp15/Controller/PurchasesServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/servletjsp15/Config/DatabaseConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/servletjsp15/Config/DatabaseConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/servletjsp15/Controller/HelloServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/servletjsp15/Controller/HelloServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/servletjsp15/DAO/RecieptDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/servletjsp15/DAO/RecieptDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/servletjsp15/Model/Reciept.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/servletjsp15/Model/Reciept.java" afterDir="false" />
@@ -178,7 +177,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679300249536</updated>
-      <workItem from="1679300250991" duration="12017000" />
+      <workItem from="1679300250991" duration="19822000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1679306105010</created>
@@ -194,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679314883579</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="adds DAO implementation to project">
+      <created>1679391906961</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1679391906961</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,6 +209,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="adds comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="adds comments" />
+    <MESSAGE value="adds DAO implementation to project" />
+    <option name="LAST_COMMIT_MESSAGE" value="adds DAO implementation to project" />
   </component>
 </project>

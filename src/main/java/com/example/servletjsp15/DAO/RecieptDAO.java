@@ -4,6 +4,8 @@ import com.example.servletjsp15.Config.DatabaseConfig;
 import com.example.servletjsp15.Model.Reciept;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RecieptDAO {
     private String jdbcUrl;
@@ -11,10 +13,11 @@ public class RecieptDAO {
     private String jdbcPassword;
 
     public RecieptDAO() {
-        DatabaseConfig databaseConfig =  new DatabaseConfig();
-        this.jdbcUrl = databaseConfig.getJdbcUrl();
-        this.jdbcUsername = databaseConfig.getJdbcUsername();
-        this.jdbcPassword = databaseConfig.getJdbcPassword();
+        //STILL A VERY USEFUL CODE!!
+//        DatabaseConfig databaseConfig =  new DatabaseConfig();
+//        this.jdbcUrl = databaseConfig.getJdbcUrl();
+//        this.jdbcUsername = databaseConfig.getJdbcUsername();
+//        this.jdbcPassword = databaseConfig.getJdbcPassword();
     }
     private Connection connection;
 
@@ -26,8 +29,10 @@ public class RecieptDAO {
             } catch (ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
+                    DatabaseConfig databaseConfig =  new DatabaseConfig();
             connection = DriverManager
-                    .getConnection(jdbcUrl, jdbcUsername, jdbcPassword);
+                    .getConnection(databaseConfig.getJdbcUrl(),
+                            databaseConfig.getJdbcUsername(), databaseConfig.getJdbcPassword());
         }
     }
 
@@ -49,6 +54,28 @@ public class RecieptDAO {
         preparedStatement.close();
         closeConnection();
         return rowsInserted;
+    }
+
+
+    public List<Reciept> findAllReciept() throws SQLException {
+        //WHERE, JOIN, AND, INNER-JOIN, OUTER JOIN ...
+        String sql = "SELECT * from receipt";
+        setConnection();
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+        ResultSet resultSet = preparedStatement.executeQuery();
+        Reciept reciept;
+        List<Reciept> recieptList = new ArrayList<>();
+        while (resultSet.next()){
+            reciept = new Reciept();
+            reciept.setId(resultSet.getInt(1));
+            reciept.setProduct_name(resultSet.getString(2));
+            reciept.setPrice(resultSet.getString(3));
+            reciept.setQuantity(resultSet.getString(4));
+            recieptList.add(reciept);
+        }
+        System.out.println(recieptList);
+        return recieptList;
     }
 
 

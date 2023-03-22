@@ -2,6 +2,8 @@ package com.example.servletjsp15.Controller;
 
 import java.io.*;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.example.servletjsp15.DAO.RecieptDAO;
 import com.example.servletjsp15.Model.Reciept;
@@ -25,7 +27,6 @@ public class HelloServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         RecieptDAO  recieptDAO = new RecieptDAO();
         Reciept reciept = new Reciept();
-
         //using the request.getParameter(with the input field name as key)
         //to access input sent from the Form in the register.jsp
         if (req.getParameter("product_name")!=null){
@@ -41,7 +42,6 @@ public class HelloServlet extends HttpServlet {
 
 
             req.setAttribute("product", req.getParameter("product_name"));
-
             //declaring our response destination below
             RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
 
