@@ -70,8 +70,8 @@ public class RecieptDAO {
             reciept = new Reciept();
             reciept.setId(resultSet.getInt(1));
             reciept.setProduct_name(resultSet.getString(2));
-            reciept.setPrice(resultSet.getString(3));
-            reciept.setQuantity(resultSet.getString(4));
+            reciept.setQuantity(resultSet.getString(3));
+            reciept.setPrice(resultSet.getString(4));
             recieptList.add(reciept);
         }
         System.out.println(recieptList);
