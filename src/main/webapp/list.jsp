@@ -13,6 +13,7 @@
 </head>
 <body>
 <%
+    //TODO: COMMENT ON ALL REMAINING LINES
     List<Reciept> listOfReceipt = (List<Reciept>)request.getAttribute("listOfReceipt");
     if (listOfReceipt!=null){
         %>
@@ -28,15 +29,16 @@
         for (Reciept reciept : listOfReceipt)
         {
 %>
+
+
         <tr>
-            <td><% out.print(reciept.getId());
-            %></td>
-        <td><% out.print(reciept.getProduct_name());
-        %></td>
-        <td><% out.print(reciept.getPrice());
-        %></td>
-        <td><% out.print(reciept.getQuantity());
-        %></td></tr>
+
+            <td><% out.print(reciept.getId());%></td>
+        <td><% out.print(reciept.getProduct_name());%></td>
+        <td><% out.print(reciept.getPrice());%></td>
+        <td><% out.print(reciept.getQuantity());%></td>
+
+        </tr>
 
     <%
         }
